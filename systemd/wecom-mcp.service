@@ -1,0 +1,17 @@
+[Unit]
+Description=WeCom MCP Server (HTTP mode)
+After=network.target
+
+[Service]
+# 改成实际运行用户
+User=CHANGE_ME
+WorkingDirectory=/opt/wecom-mcp
+EnvironmentFile=/opt/wecom-mcp/.env
+ExecStart=/opt/wecom-mcp/venv/bin/python /opt/wecom-mcp/server.py --http
+Restart=always
+RestartSec=3
+StandardOutput=append:/opt/wecom-mcp/server.log
+StandardError=append:/opt/wecom-mcp/server.log
+
+[Install]
+WantedBy=multi-user.target
