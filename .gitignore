@@ -6,3 +6,7 @@ env/
 .env
 *.log
 .DS_Store
+credentials.json
+gw.json
+*.token
+panel.json
